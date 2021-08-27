@@ -1,13 +1,9 @@
-
-
+import CartItem  from "./cartitem";
 
 function App() {
-  const name='hardik';
   return (
-    
-
-    <div className="App">
-      <h1>cart</h1>
+    <div className="cart-item">
+      <CartItem/>
     </div>
   );
 }
