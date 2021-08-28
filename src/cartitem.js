@@ -1,6 +1,6 @@
 import React from "react";
 
-class cartitem extends React.Component {
+class Cartitem extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -26,6 +26,10 @@ class cartitem extends React.Component {
     });
   }
    descreseqty=()=>{
+     const{Qty}=this.state;
+     if(Qty===0){
+       return;
+     }
      this.setState((forstate)=>{
        return{
         Qty:forstate.Qty-1
@@ -61,7 +65,7 @@ class cartitem extends React.Component {
             <img
               alt="delete"
               className="action-icons "
-              src="https://img-premium.flaticon.com/png/128/484/premium/484611.png?token=exp=1630140897~hmac=0f9e688cadd5fdcc4c71ba14c26f6c35"
+              src="https://img-premium.flaticon.com/png/128/484/premium/484611.png?token=exp=1630173976~hmac=aa8d6ee01120e926ad5a5f1399d4bb07"
             />
           </div>
         </div>
@@ -77,4 +81,4 @@ const styles = {
     background: "#ccc",
   },
 };
-export default cartitem;
+export default Cartitem;
