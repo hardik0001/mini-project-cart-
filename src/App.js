@@ -1,4 +1,3 @@
-import CartItem  from "./cartitem";
 import Cart from "./cart";
 
 function App() {
