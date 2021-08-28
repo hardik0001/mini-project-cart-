@@ -12,8 +12,27 @@ class cartitem extends React.Component {
     ///this.increaseQty=this.increaseQty.bind(this);
   }
   increaseQty=()=>{
-      console.log('this',this.state );
+    // console.log('this',this.state );
+    // this.setState({
+    //   Qty:this.state.Qty +1,
+      
+
+    // });
+    // setstate form 2
+    this.setState((prestate)=>{
+      return{
+        Qty:prestate.Qty+1
+      }
+    });
   }
+   descreseqty=()=>{
+     this.setState((forstate)=>{
+       return{
+        Qty:forstate.Qty-1
+       }
+       
+    });
+   }
   render() {
     const { price, tittle, Qty } = this.state;
     return (
@@ -36,12 +55,13 @@ class cartitem extends React.Component {
             <img
               alt="decrease"
               className="action-icons "
-              src="https://t3.ftcdn.net/jpg/03/73/49/86/240_F_373498649_nBxauQ0ipBSVrVcMpWWVmTpXu3BLvRyY.jpg"
+              src="https://image.flaticon.com/icons/png/128/992/992683.png"
+              onClick={this.descreseqty}
             />
             <img
               alt="delete"
               className="action-icons "
-              src="https://img-premium.flaticon.com/png/128/484/premium/484611.png?token=exp=1630084171~hmac=4fe69cf3beb7bea4ee451ee229143b10"
+              src="https://img-premium.flaticon.com/png/128/484/premium/484611.png?token=exp=1630140897~hmac=0f9e688cadd5fdcc4c71ba14c26f6c35"
             />
           </div>
         </div>
