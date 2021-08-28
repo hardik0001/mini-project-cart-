@@ -1,44 +1,36 @@
 import React from "react";
 
 class Cartitem extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      price: 999,
-      tittle: "Mobile phone",
-      Qty: 1,
-      img: "",
-    };
-    ///this.increaseQty=this.increaseQty.bind(this);
-  }
-  increaseQty=()=>{
+  ///this.increaseQty=this.increaseQty.bind(this);
+
+  increaseQty = () => {
+
     // console.log('this',this.state );
     // this.setState({
     //   Qty:this.state.Qty +1,
-      
 
     // });
     // setstate form 2
-    this.setState((prestate)=>{
-      return{
-        Qty:prestate.Qty+1
-      }
+    
+    this.setState((prestate) => {
+      return {
+        Qty: prestate.Qty + 1,
+      };
     });
-  }
-   descreseqty=()=>{
-     const{Qty}=this.state;
-     if(Qty===0){
-       return;
-     }
-     this.setState((forstate)=>{
-       return{
-        Qty:forstate.Qty-1
-       }
-       
+  };
+  descreseqty = () => {
+    const { Qty } = this.state;
+    if (Qty === 0) {
+      return;
+    }
+    this.setState((forstate) => {
+      return {
+        Qty: forstate.Qty - 1,
+      };
     });
-   }
+  };
   render() {
-    const { price, tittle, Qty } = this.state;
+    const { price, tittle, Qty } = this.props.products;
     return (
       <div class="cart-item">
         <div class="left-block">
