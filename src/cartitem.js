@@ -1,58 +1,33 @@
 import React from "react";
 
 class Cartitem extends React.Component {
-  ///this.increaseQty=this.increaseQty.bind(this);
-
-  increaseQty = () => {
-
-    // console.log('this',this.state );
-    // this.setState({
-    //   Qty:this.state.Qty +1,
-
-    // });
-    // setstate form 2
-    
-    this.setState((prestate) => {
-      return {
-        Qty: prestate.Qty + 1,
-      };
-    });
-  };
-  descreseqty = () => {
-    const { Qty } = this.state;
-    if (Qty === 0) {
-      return;
-    }
-    this.setState((forstate) => {
-      return {
-        Qty: forstate.Qty - 1,
-      };
-    });
-  };
+  
   render() {
-    const { price, tittle, Qty } = this.props.products;
+    console.log('this.props', this.props);
+    const { price, title, Qty } = this.props.product;
     return (
-      <div class="cart-item">
-        <div class="left-block">
+      <div className="cart-item">
+         {this.props.jsx}
+        <div className="left-block">
           <img style={styles.image} alt="" />
         </div>
-        <div class="right-block">
-          <div style={{ fontSize: 25 }}>{tittle}</div>
-          <div style={{ color: "#ccc" }}>{price}</div>
-          <div style={{ color: "#ccc" }}>{Qty}</div>
+        <div className  ="right-block">
+          <div style={{ fontSize: 25 }}>{title}</div>
+          <div style={{ color: "#ccc" }}> RS {price}</div>
+          <div style={{ color: "#ccc" }}> QTY: {Qty}</div>
           <div className="cart-item-actions">
             {/*button*/}
             <img
               alt="increase"
               className="action-icons "
               src="https://image.flaticon.com/icons/png/128/992/992651.png"
-              onClick={this.increaseQty}
+              onClick={() => this.props.onIncreaseQuantity(this.props.product)}
             />
             <img
               alt="decrease"
               className="action-icons "
               src="https://image.flaticon.com/icons/png/128/992/992683.png"
-              onClick={this.descreseqty}
+              onClick={() => this.props.ondecreaseQuantity(this.props.product)}
             />
             <img
               alt="delete"
