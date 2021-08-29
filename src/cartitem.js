@@ -49,9 +49,9 @@ class Cartitem extends React.Component {
 }
 const styles = {
   image: {
-    height: 110,
+    height:110,
     width: 110,
-    boderradius: 4,
+    borderRadius: 4,
     background: "#ccc",
   },
 };

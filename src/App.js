@@ -1,9 +1,12 @@
 import Cart from "./cart";
+import Navbar from "./navbar";
 
 function App() {
   return (
-    <div className="cart-item">
+    <div className="App">
+      <Navbar/>
       <Cart/>
+      
     </div>
   );
 }
